@@ -3,9 +3,7 @@ package com.veda;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 //Partially correct - need to revisit this code.
 public class Coin {
@@ -14,9 +12,8 @@ public class Coin {
 	public static void main(String[] args) {
 		Integer[] denominations = { 1, 2, 3 };
 		int amount = 4;
-		possibleChangeCombinations(amount, denominations);
-		//denominationCombination(amount, denominations);
-		//changePossibilitiesBottomUp(amount, denominations);
+		
+		denominationCombination(amount, denominations);
 	}
 
 	static void denominationCombination(int amount, Integer[] denominations) {
@@ -73,45 +70,5 @@ public class Coin {
 		} else {
 			return null;
 		}
-	}
-	
-	static void possibleChangeCombinations(int amount, Integer[] denominations) {
-		List<Integer> deonminationList = Arrays.asList(denominations);
-		Collections.sort(deonminationList);
-		
-		int initialAmount = amount;
-		boolean stopLookingForChange = false;
-		
-		StringBuilder sb = new StringBuilder();
-		
-		for(int index = 0; index < deonminationList.size() && amount != 0; index++) {
-			int denomination = sDenominationList.get(index);
-			
-			if(amount < denomination) {
-				break;
-			}
-			
-			amount = amount - denomination;
-			sb.append(denomination + "c ");
-			
-		}
-	
-	}
-
-	static int changePossibilitiesBottomUp(int amount, int[] denominations) {
-		int[] waysOfDoingNCents = new int[amount + 1]; // array of zeros from
-														// 0..amount
-		waysOfDoingNCents[0] = 1;
-
-		for (int coin : denominations) {
-			for (int higherAmount = coin; higherAmount <= amount; higherAmount++) {
-				int higherAmountRemainder = higherAmount - coin;
-				waysOfDoingNCents[higherAmount] += waysOfDoingNCents[higherAmountRemainder];
-				System.out.println(higherAmount + ", " + amount);
-			}
-		}
-		System.out.println(waysOfDoingNCents[amount]);
-
-		return waysOfDoingNCents[amount];
 	}
 }
