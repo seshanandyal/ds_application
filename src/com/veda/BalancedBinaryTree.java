@@ -1,3 +1,9 @@
+/**
+ * Checks if the binary tree is "super" balanced - where the difference between the minHeight and maxHeight of a
+ * binary tree is less than or equal to 1.
+ * @author Sesha Shayan Nandyal
+ */
+
 package com.veda;
 
 public class BalancedBinaryTree {
