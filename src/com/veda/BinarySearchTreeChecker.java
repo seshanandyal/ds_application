@@ -9,17 +9,17 @@ public class BinarySearchTreeChecker {
 	}
 
 	boolean inOrder() {
+		if(mRoot == null || (mRoot.mLeft == null && mRoot.mRight == null)) {
+			return true;
+		}
+		
 		mPrevious = mRoot;
 		return inOrder(mRoot);
 	}
 
 	boolean inOrder(BinaryTreeNode node) {
 		if (node == null) {
-			if (mPrevious == mRoot) {
-				return true;
-			} else {
-				return false;
-			}
+			return true;
 		}
 		
 		inOrder(node.mLeft);
