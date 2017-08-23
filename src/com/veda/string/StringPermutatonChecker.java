@@ -1,3 +1,7 @@
+/**
+ * Checks if one string is a permutation of the other.
+ * @author Sesha Nandyal
+ */
 package com.veda.string;
 
 public class StringPermutatonChecker {
@@ -5,7 +9,11 @@ public class StringPermutatonChecker {
 		String string1 = "adroit";
 		String string2 = "rditoa";
 		
-		System.out.printf("\'%s\' and \'%s\' are permutations of each other: %b", 
+		System.out.printf("\'%s\' and \'%s\' are permutations of each other: %b \n", 
+				string1, string2, isAPermutation(string1, string2));
+		
+		string2 = "rditob";
+		System.out.printf("\'%s\' and \'%s\' are permutations of each other: %b \n", 
 				string1, string2, isAPermutation(string1, string2));
 	}
 
