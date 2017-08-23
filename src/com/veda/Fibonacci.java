@@ -1,3 +1,8 @@
+/**
+ * Generates Fibonacci numbers
+ * 
+ * @author Sesha Shayan Nandyal
+ */
 package com.veda;
 
 
@@ -42,6 +47,11 @@ public class Fibonacci {
 }
 
 class InvalidNumberException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public InvalidNumberException() {
 		super();
 	}
