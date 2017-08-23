@@ -1,3 +1,9 @@
+/**
+ * Implementation of Boyer Moore Algorithm - to search a pattern in a given word.
+ * 
+ * @author Sesha Shayan Nandyal
+ */
+
 package com.veda;
 
 import java.util.HashMap;
@@ -10,22 +16,23 @@ public class BoyerMoorePatternFinder {
 	public BoyerMoorePatternFinder() {
 		mBadMapTable = new HashMap<Character, Integer>();
 	}
+	
 	public static void main(String[] args) {
 		BoyerMoorePatternFinder finder = new BoyerMoorePatternFinder();
 		
 		String word = "this is a test";
 		String pattern = "test";
-		System.out.printf("The pattern \'%s\' is contained in the \'%s\' is %b \n", 
+		System.out.printf("The pattern \'%s\' is contained in the string, \'%s\' is %b \n", 
 				pattern, word, finder.search(word, pattern));
 		
 		word = "abcbcfgm";
 		pattern = "bcfg";
-		System.out.printf("The pattern \'%s\' is contained in the \'%s\' is %b \n", 
+		System.out.printf("The pattern \'%s\' is contained in the string, \'%s\' is %b \n", 
 				pattern, word, finder.search(word, pattern));
 		
 		word = "abcbcfgm";
 		pattern = "bfgm";
-		System.out.printf("The pattern \'%s\' is contained in the \'%s\' is %b \n", 
+		System.out.printf("The pattern \'%s\' is contained in the string, \'%s\' is %b \n", 
 				pattern, word, finder.search(word, pattern));
 		
 	}
