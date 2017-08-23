@@ -1,3 +1,10 @@
+/**
+ * BracketValidator - validates if every opening parenthesis/braces/brackets has its corresponding 
+ * parenthesis/braces/brackets.
+ * 
+ * @author Sesha Shayan Nandyal
+ */
+
 package com.veda;
 
 import java.util.HashMap;
