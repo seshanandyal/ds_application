@@ -1,3 +1,10 @@
+/**
+ * Checks if a binary tree is a valid binary search tree. The logic here is, when doing an inOrder traversal, if
+ * the current node is less than the previous node (assuming that the nodes are in ascending order) then the
+ * tree is not a binary search tree.
+ * @author Sesha Shayan Nandyal
+ */
+
 package com.veda;
 
 public class BinarySearchTreeChecker {
