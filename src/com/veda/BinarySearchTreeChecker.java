@@ -15,7 +15,7 @@ public class BinarySearchTreeChecker {
 
 	boolean inOrder(BinaryTreeNode node) {
 		if (node == null) {
-			if (node == mRoot) {
+			if (mPrevious == mRoot) {
 				return true;
 			} else {
 				return false;
