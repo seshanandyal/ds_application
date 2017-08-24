@@ -4,7 +4,7 @@
  * @author Sesha Shayan Nandyal
  */
 
-package com.veda;
+package com.veda.string;
 
 import java.util.HashMap;
 import java.util.Map;
