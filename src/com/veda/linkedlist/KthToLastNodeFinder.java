@@ -3,7 +3,7 @@
  *  @author Sesha Shayan Nandyal
  */
 
-package linkedlist;
+package com.veda.linkedlist;
 
 public class KthToLastNodeFinder {
 	private Node mHead;

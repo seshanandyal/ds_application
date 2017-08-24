@@ -1,4 +1,4 @@
-package linkedlist;
+package com.veda.linkedlist;
 
 public class LinkedListNode {
 	private int mValue;

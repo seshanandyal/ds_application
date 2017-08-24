@@ -2,7 +2,7 @@
  * Remove duplicates from an unsorted linked list.
  * @author Sesha Shayan Nandyal
  */
-package linkedlist;
+package com.veda.linkedlist;
 
 import java.util.HashSet;
 import java.util.Set;
