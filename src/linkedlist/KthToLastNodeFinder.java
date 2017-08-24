@@ -1,3 +1,8 @@
+/**
+ *  Finds the kth element from the end of the linkedlist
+ *  @author Sesha Shayan Nandyal
+ */
+
 package linkedlist;
 
 public class KthToLastNodeFinder {
