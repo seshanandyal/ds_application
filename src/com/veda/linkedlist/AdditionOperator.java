@@ -1,6 +1,6 @@
 /**
  * Compute the sum of two operands, which are represented as linked lists. The nodes in the list
- * are in reverse order (starting from the ones).
+ * are in the reverse order (starting from the ones digit).
  * @author Sesha Shayan Nandyal
  */
 package com.veda.linkedlist;
