@@ -1,4 +1,4 @@
-package com.veda;
+package com.veda.stacksnqueue;
 
 import java.util.Stack;
 
