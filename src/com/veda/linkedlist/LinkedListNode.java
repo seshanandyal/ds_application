@@ -35,6 +35,13 @@ public class LinkedListNode {
 	public void setNext(LinkedListNode next) {
 		mNext = next;
 	}
+
+	public void setValue(int value) {
+		mValue = value;
+	}
 	
-	
+	@Override
+	public String toString() {
+		return String.valueOf(mValue);
+	}
 }
