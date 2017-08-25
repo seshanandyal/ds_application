@@ -66,7 +66,6 @@ public class LinkedListIntersectionFinder {
 		
 		if(list1Length > list2Length) {
 			int shortenLongerList = list1Length - list2Length;
-			System.out.println(shortenLongerList);
 			currentList1 = mList1.mHead;
 			while(shortenLongerList >= 1) {
 				currentList1 = currentList1.getNext();
