@@ -1,3 +1,9 @@
+ 
+/**
+Performs the stack operations and the min() returns the largest element in the stack in O(1)
+ * @author Sesha Shayan Nandyal
+ */
+
 package com.veda.stacksnqueue;
 
 import java.util.Stack;
