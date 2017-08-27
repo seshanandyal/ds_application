@@ -4,7 +4,7 @@
  * @author Sesha Shayan Nandyal
  */
 
-package com.veda;
+package com.veda.treesngraphs;
 
 public class BalancedBinaryTree {
 	public BinaryTreeNode mRoot;
