@@ -5,7 +5,7 @@
  * @author Sesha Shayan Nandyal
  */
 
-package com.veda;
+package com.veda.treesngraphs;
 
 public class BinarySearchTreeChecker {
 	private BinaryTreeNode mRoot;
