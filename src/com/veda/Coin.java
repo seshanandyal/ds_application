@@ -3,6 +3,7 @@
  * an amount of money
  * an array of coin denominations
  * computes the number of ways to make the amount of money with coins of the available denominations.
+ * @author Sesha Shayan Nandyal
  */
 
 package com.veda;
