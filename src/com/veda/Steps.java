@@ -1,3 +1,7 @@
+/**
+ * Different combinations of steps to make total steps.
+ * @author Sesha Shayan Nandyal
+ */
 package com.veda;
 
 import java.util.HashSet;
