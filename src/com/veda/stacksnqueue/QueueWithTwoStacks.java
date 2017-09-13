@@ -1,57 +1,64 @@
+/**
+ * Queue using two stacks.
+ * @author Sesha Shayan Nandyal
+ */
 package com.veda.stacksnqueue;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 public class QueueWithTwoStacks {
-	private Stack<Character> mEnQueueStack;
-	private Stack<Character> mDeQueueStack;
-	
-	public QueueWithTwoStacks() {
-		mEnQueueStack = new Stack<>();
-		mDeQueueStack = new Stack<>();
-	}
-	
-	public void enqueue(char character) {
-		mEnQueueStack.push(character);
-	}
-	
-	public char dequeue() throws QueueWithTwoStacksException {
-		if(mEnQueueStack.isEmpty() && mDeQueueStack.isEmpty()) {
-			throw new QueueWithTwoStacksException("Queue is empty.");
-		}
-		
-		if(mDeQueueStack.isEmpty()) {
-			while(!mEnQueueStack.isEmpty()) {
-				mDeQueueStack.push(mEnQueueStack.pop());
-			}
-		}
-		
-		return mDeQueueStack.pop();
-	}
-	
-	public static void main(String[] args) throws QueueWithTwoStacksException {
-		QueueWithTwoStacks queue = new QueueWithTwoStacks();
-		queue.enqueue('a');
-		queue.enqueue('b');
-		queue.enqueue('c');
-		System.out.println(queue.dequeue());
-		queue.enqueue('d');
-		System.out.println(queue.dequeue());
-		queue.enqueue('e');
-		System.out.println(queue.dequeue());
-		queue.enqueue('f');
-		System.out.println(queue.dequeue());
-		System.out.println(queue.dequeue());
-		System.out.println(queue.dequeue());
-	}
-}
+	public static class MyQueue<T> {
+        Stack<T> stackNewestOnTop = new Stack<T>();
+        Stack<T> stackOldestOnTop = new Stack<T>();
 
-class QueueWithTwoStacksException extends Exception {
-	public QueueWithTwoStacksException() {
-		super();
-	}
-	
-	public QueueWithTwoStacksException(String message) {
-		super(message);
-	}
+        public void enqueue(T value) { // Push onto newest stack
+            stackNewestOnTop.push(value);
+        }
+
+        public T peek() {
+            if(stackOldestOnTop.isEmpty()) {
+                if(stackNewestOnTop.isEmpty()) {
+                    return null;
+                } else {
+                    while(!stackNewestOnTop.empty()) {
+                        stackOldestOnTop.push(stackNewestOnTop.pop());
+                    }
+                    return stackOldestOnTop.peek();
+                }
+            } else {
+                return stackOldestOnTop.peek();
+            }
+        }
+
+        public T dequeue() {
+            if(peek() == null) {
+                while(!stackNewestOnTop.empty()) {
+                    stackOldestOnTop.push(stackNewestOnTop.pop());
+                }
+            }
+            T popped = stackOldestOnTop.pop();
+            return popped;
+        }
+    }
+
+    
+    public static void main(String[] args) {
+        MyQueue<Integer> queue = new MyQueue<Integer>();
+        
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        
+        for (int i = 0; i < n; i++) {
+            int operation = scan.nextInt();
+            if (operation == 1) { // enqueue
+                queue.enqueue(scan.nextInt());
+            } else if (operation == 2) { // dequeue
+                queue.dequeue();
+            } else if (operation == 3) { // print/peek
+                System.out.println(queue.peek());
+            }
+        }
+        scan.close();
+    }
 }
