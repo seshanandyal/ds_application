@@ -12,7 +12,7 @@ public class DirectedGraph {
 	private VertexNode mStart;
 	private Queue<VertexNode> mQueue = new LinkedList<>();
 	
-	public void insertEdge(String value) {
+	public void insertVertex(String value) {
 		VertexNode newNode = new VertexNode(value);
 		
 		if(mStart == null) {
@@ -26,7 +26,7 @@ public class DirectedGraph {
 		}
 	}
 	
-	public void setPath(String startValue, String endValue) {
+	public void setEdge(String startValue, String endValue) {
 		VertexNode startNode = null, endNode = null;
 		VertexNode current = mStart;
 		
@@ -109,19 +109,19 @@ public class DirectedGraph {
 	}
 	public static void main(String[] args) {
 		DirectedGraph graph = new DirectedGraph();
-		graph.insertEdge("xyz");
-		graph.insertEdge("pqr");
-		graph.insertEdge("abc");
-		graph.insertEdge("lmn");
+		graph.insertVertex("xyz");
+		graph.insertVertex("pqr");
+		graph.insertVertex("abc");
+		graph.insertVertex("lmn");
 		
-		graph.setPath("xyz", "pqr");
-		graph.setPath("xyz", "abc");
+		graph.setEdge("xyz", "pqr");
+		graph.setEdge("xyz", "abc");
 
-		graph.setPath("abc", "lmn");
-		graph.setPath("lmn", "abc");
-		graph.setPath("lmn", "pqr");
-		graph.setPath("lmn", "xyz");
-		graph.setPath("pqr", "abc");
+		graph.setEdge("abc", "lmn");
+		graph.setEdge("lmn", "abc");
+		graph.setEdge("lmn", "pqr");
+		graph.setEdge("lmn", "xyz");
+		graph.setEdge("pqr", "abc");
 		
 		System.out.printf("Path exists between %s and %s is: %b \n", "lmn", "pqr", 
 				graph.pathExists("lmn", "pqr"));
